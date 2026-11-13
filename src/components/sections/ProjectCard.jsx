@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Sparkles, Building2, Globe, Cake, Palette, ArrowUpRight } from 'lucide-react';
+import { Github, Building2, Globe, Cake, Palette, ArrowUpRight } from 'lucide-react';
 import { Badge } from '../common/Badge';
 
 export const ProjectCard = ({ project, index }) => {
   const isEven = index % 2 === 0;
 
-  // Custom visual theme styling for preview viewport
-  const renderVisualMockup = () => {
+  // Visual interface placeholder representing the project's brand palette & layout
+  const renderVisualPlaceholder = () => {
     switch (project.id) {
       case 'dubai-luxury-real-estate':
         return (
@@ -15,31 +15,31 @@ export const ProjectCard = ({ project, index }) => {
             <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#C6F36A_1px,transparent_1px)] [background-size:16px_16px]" />
             <div className="flex items-center justify-between z-10">
               <span className="text-[10px] font-mono tracking-widest text-[#E6C687] uppercase border border-[#E6C687]/30 px-2 py-0.5 rounded">
-                DUBAI PROPERTIES
+                PROPERTY SHOWCASE
               </span>
               <Building2 className="w-4 h-4 text-[#E6C687]" />
             </div>
 
             <div className="z-10 my-auto py-4">
               <span className="text-xs font-mono text-text-secondary uppercase tracking-widest block mb-1">
-                Luxury Villa Portfolio
+                Visual Interface Preview
               </span>
               <p className="font-heading text-xl sm:text-2xl font-bold text-parchment tracking-tight">
-                Palm Jumeirah & Downtown Residences
+                Luxury Villa & Penthouse Listings
               </p>
               <div className="mt-3 flex gap-2">
                 <span className="px-2 py-1 rounded bg-black/40 text-[11px] font-mono text-[#E6C687] border border-[#E6C687]/20">
-                  AED 18,500,000+
+                  Featured Residences
                 </span>
                 <span className="px-2 py-1 rounded bg-black/40 text-[11px] font-mono text-text-secondary border border-border">
-                  Private Marina
+                  Modular Layout
                 </span>
               </div>
             </div>
 
             <div className="z-10 flex items-center justify-between pt-3 border-t border-border/40 text-[11px] font-mono text-text-secondary">
-              <span>Architectural Showcase</span>
-              <span className="text-accent">React Architecture</span>
+              <span>Codebase Interface Preview</span>
+              <span className="text-accent">React • CSS</span>
             </div>
           </div>
         );
@@ -58,18 +58,18 @@ export const ProjectCard = ({ project, index }) => {
 
             <div className="z-10 my-auto py-4">
               <span className="text-xs font-mono text-emerald-400/80 uppercase tracking-widest block mb-1">
-                Global Trade Academy
+                Live Deployment
               </span>
               <p className="font-heading text-xl sm:text-2xl font-bold text-parchment tracking-tight">
-                Simplifying International Trade for Entrepreneurs
+                Global Trade Educational Platform
               </p>
               <p className="text-xs text-text-secondary mt-2 line-clamp-2">
-                Storytelling-oriented educational landing page with interactive enrollment touchpoints.
+                Storytelling landing page introducing trade concepts to entrepreneurs.
               </p>
             </div>
 
             <div className="z-10 flex items-center justify-between pt-3 border-t border-border/40 text-[11px] font-mono text-text-secondary">
-              <span>Production Edge</span>
+              <span>Production Deployment</span>
               <span className="text-emerald-400">export-easy-hai.vercel.app</span>
             </div>
           </div>
@@ -88,26 +88,26 @@ export const ProjectCard = ({ project, index }) => {
 
             <div className="z-10 my-auto py-4">
               <span className="text-xs font-mono text-pink-300/80 uppercase tracking-widest block mb-1">
-                Artisan Patisserie & Desserts
+                Design & Component Concept
               </span>
               <p className="font-heading text-xl sm:text-2xl font-bold text-parchment tracking-tight">
-                Cakes, Dessert Tubs, Brownies & Cookies
+                Patisserie & Dessert Storefront
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 <span className="px-2 py-0.5 rounded bg-black/40 text-[10px] font-mono text-pink-200 border border-pink-500/20">
-                  Custom Bundles
+                  Menu UI
                 </span>
                 <span className="px-2 py-0.5 rounded bg-black/40 text-[10px] font-mono text-pink-200 border border-pink-500/20">
-                  Sensory Brand UI
+                  Product Hierarchy
                 </span>
                 <span className="px-2 py-0.5 rounded bg-black/40 text-[10px] font-mono text-pink-200 border border-pink-500/20">
-                  Frictionless Cart
+                  Cart Flow
                 </span>
               </div>
             </div>
 
             <div className="z-10 flex items-center justify-between pt-3 border-t border-border/40 text-[11px] font-mono text-text-secondary">
-              <span>Boutique Brand Concept</span>
+              <span>Concept Exploration</span>
               <span className="text-pink-300">UX Architecture</span>
             </div>
           </div>
@@ -120,31 +120,31 @@ export const ProjectCard = ({ project, index }) => {
             <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:16px_16px]" />
             <div className="flex items-center justify-between z-10">
               <span className="text-[10px] font-mono tracking-widest text-slate-300 uppercase border border-slate-400/30 px-2 py-0.5 rounded">
-                CONTEMPORARY GALLERY
+                STOREFRONT SHOWCASE
               </span>
               <Palette className="w-4 h-4 text-slate-300" />
             </div>
 
             <div className="z-10 my-auto py-4">
               <span className="text-xs font-mono text-slate-400 uppercase tracking-widest block mb-1">
-                Curated Storefront
+                Visual Interface Preview
               </span>
               <p className="font-heading text-xl sm:text-2xl font-bold text-parchment tracking-tight">
-                Wall Art, Sculptural Objects & Limited Prints
+                Wall Art & Sculptural Decor Catalog
               </p>
               <div className="mt-3 flex gap-2">
                 <span className="px-2 py-1 rounded bg-black/40 text-[11px] font-mono text-slate-300 border border-border">
-                  Editorial Layouts
+                  Grid Layout
                 </span>
                 <span className="px-2 py-1 rounded bg-black/40 text-[11px] font-mono text-slate-300 border border-border">
-                  Minimalist Cart UX
+                  Cart UI
                 </span>
               </div>
             </div>
 
             <div className="z-10 flex items-center justify-between pt-3 border-t border-border/40 text-[11px] font-mono text-text-secondary">
-              <span>Fine Objects & Sculptures</span>
-              <span className="text-accent">JavaScript Store</span>
+              <span>Codebase Interface Preview</span>
+              <span className="text-accent">JavaScript • CSS Grid</span>
             </div>
           </div>
         );
@@ -162,8 +162,8 @@ export const ProjectCard = ({ project, index }) => {
       <div className={`grid grid-cols-1 lg:grid-cols-12 gap-0 ${isEven ? '' : 'lg:flex-row-reverse'}`}>
         {/* Preview Frame Container (Cols 1-7 or 1-6) */}
         <div className={`lg:col-span-7 overflow-hidden border-b lg:border-b-0 ${isEven ? 'lg:border-r border-border' : 'lg:order-2 lg:border-l border-border'}`}>
-          <div className="relative group-hover:scale-[1.015] transition-transform duration-700 ease-luxury">
-            {renderVisualMockup()}
+          <div className="relative group-hover:scale-[1.01] transition-transform duration-700 ease-luxury">
+            {renderVisualPlaceholder()}
           </div>
         </div>
 
@@ -190,7 +190,7 @@ export const ProjectCard = ({ project, index }) => {
 
               {!project.isLive && !project.isConcept && (
                 <Badge variant="default">
-                  Verified Repo
+                  Repository Available
                 </Badge>
               )}
             </div>
@@ -242,13 +242,13 @@ export const ProjectCard = ({ project, index }) => {
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-border bg-bg-secondary text-text-primary text-xs font-mono hover:border-text-secondary hover:text-accent transition-all cursor-pointer"
               >
                 <Github className="w-3.5 h-3.5" />
-                <span>View Source</span>
+                <span>View Repository</span>
               </a>
             )}
 
             {project.isConcept && (
               <span className="text-xs font-mono text-text-secondary italic">
-                * Presented as an authentic UI/UX concept
+                * Design showcase exploring interface & interaction patterns
               </span>
             )}
           </div>

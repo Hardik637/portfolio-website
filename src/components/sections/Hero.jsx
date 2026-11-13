@@ -153,7 +153,7 @@ export const Hero = () => {
                     Custom Web Solutions
                   </span>
                   <span className="text-[11px] font-mono text-text-secondary mt-0.5">
-                    Zero Templates • 100% Craft
+                    Thoughtful Design • Clean Code
                   </span>
                 </div>
               </div>
@@ -171,9 +171,9 @@ export const Hero = () => {
                 <div className="flex items-center justify-between p-2.5 rounded-lg bg-bg-secondary/70 border border-border/60">
                   <span className="text-text-secondary flex items-center gap-2">
                     <ShieldCheck className="w-3.5 h-3.5 text-accent" />
-                    Core Standards
+                    Standards
                   </span>
-                  <span className="text-text-primary font-medium">60 FPS • Responsive</span>
+                  <span className="text-text-primary font-medium">Accessible • Responsive</span>
                 </div>
 
                 <div className="flex items-center justify-between p-2.5 rounded-lg bg-bg-secondary/70 border border-border/60">
@@ -181,7 +181,7 @@ export const Hero = () => {
                     <Sparkles className="w-3.5 h-3.5 text-accent" />
                     Status
                   </span>
-                  <span className="text-emerald-400 font-medium">Available for Hiring</span>
+                  <span className="text-emerald-400 font-medium">Open for Projects</span>
                 </div>
               </div>
             </motion.div>

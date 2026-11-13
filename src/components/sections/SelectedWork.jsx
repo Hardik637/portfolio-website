@@ -21,7 +21,7 @@ export const SelectedWork = () => {
           <SectionHeading
             eyebrow="01 // SELECTED WORK"
             title="Engineered with craft, purpose & precision."
-            subtitle="A curated selection of commercial web applications, live platforms, and design showcases. Every implementation backed by authentic codebases."
+            subtitle="A curated selection of web platforms, frontend explorations, and concept showcases. Every project reflects authentic codebases and design work."
             className="mb-0"
           />
 

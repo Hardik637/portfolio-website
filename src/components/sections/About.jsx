@@ -53,11 +53,11 @@ export const About = () => {
                 <div className="flex items-center gap-2 mb-2">
                   <Cpu className="w-4 h-4 text-accent" />
                   <span className="font-heading font-bold text-sm text-text-primary">
-                    Performance First
+                    Performance Mindset
                   </span>
                 </div>
                 <p className="text-xs text-text-secondary font-mono leading-relaxed">
-                  Sub-second loading, zero unnecessary script bloat, smooth 60fps scrolling, and responsive accessibility.
+                  Clean component structures, lightweight asset delivery, smooth scrolling, and accessible markup.
                 </p>
               </div>
             </div>

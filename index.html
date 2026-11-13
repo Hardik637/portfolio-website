@@ -4,34 +4,65 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO Metadata -->
     <title>Hardik Agarwal — Web Developer & Digital Experience Builder</title>
-    <meta name="description" content="Personal portfolio of Hardik Agarwal — Web Developer & Digital Experience Builder. Designing and building modern digital experiences with clarity, precision, and purpose." />
-    
-    <!-- OpenGraph / Social Metadata -->
+    <meta name="title" content="Hardik Agarwal — Web Developer & Digital Experience Builder" />
+    <meta
+      name="description"
+      content="Personal portfolio of Hardik Agarwal, Web Developer & Digital Experience Builder. Designing and developing modern websites, e-commerce storefronts, and custom web experiences with clean code and reliable performance."
+    />
+    <meta name="author" content="Hardik Agarwal" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical URL Placeholder (Update href when production domain is connected) -->
+    <!-- <link rel="canonical" href="https://[YOUR_PRODUCTION_DOMAIN]/" /> -->
+
+    <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Hardik Agarwal — Web Developer & Digital Experience Builder" />
-    <meta property="og:description" content="I design and develop modern websites, e-commerce experiences and custom web solutions that combine thoughtful design with reliable functionality." />
+    <meta
+      property="og:description"
+      content="I design and develop modern websites, e-commerce experiences and custom web solutions that combine thoughtful design with reliable functionality."
+    />
+    <meta property="og:image" content="/og-image.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Hardik Agarwal — Web Developer & Digital Experience Builder Portfolio Preview" />
     <meta property="og:site_name" content="Hardik Agarwal Portfolio" />
+    <meta property="og:locale" content="en_US" />
 
-    <!-- Google Fonts Preconnect & Subsets -->
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hardik Agarwal — Web Developer & Digital Experience Builder" />
+    <meta
+      name="twitter:description"
+      content="I design and develop modern websites, e-commerce experiences and custom web solutions that combine thoughtful design with reliable functionality."
+    />
+    <meta name="twitter:image" content="/og-image.svg" />
+    <meta name="twitter:image:alt" content="Hardik Agarwal — Web Developer & Digital Experience Builder" />
+
+    <!-- Google Fonts Preconnect & Subsets with display=swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- Instant Anti-FOUC Theme Initialization Script -->
+    <!-- Theme Initialization Script (Validates localStorage to 'dark' or 'light', defaults to 'dark') -->
     <script>
       (function() {
         try {
-          const storedTheme = localStorage.getItem('theme');
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          const theme = storedTheme ? storedTheme : (prefersDark ? 'dark' : 'dark'); // Default to dark theme as primary
+          const stored = localStorage.getItem('theme');
+          const theme = (stored === 'light' || stored === 'dark') ? stored : 'dark';
           document.documentElement.setAttribute('data-theme', theme);
-          if (theme === 'dark') {
-            document.documentElement.classList.add('dark');
-          } else {
-            document.documentElement.classList.remove('dark');
-          }
-        } catch (e) {}
+          document.documentElement.classList.toggle('dark', theme === 'dark');
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          document.documentElement.classList.add('dark');
+        }
       })();
     </script>
   </head>

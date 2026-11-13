@@ -5,19 +5,19 @@ export const projectsData = [
     eyebrow: '01 / REAL ESTATE PLATFORM',
     title: 'Dubai Luxury Real Estate',
     category: 'Real Estate',
-    domain: 'High-End Commercial & Luxury Property Showcase',
-    description: 'A premium, high-performance web experience focused on Dubai\'s luxury property market. Features architectural listings, community highlights, tailored amenity breakdowns, and seamless inquiry channels.',
+    domain: 'Commercial Real Estate Web Showcase',
+    description: 'A frontend web presentation concept for luxury property listings in Dubai. Built with React and modular components to explore responsive layouts, property grid cards, and clean inquiry touchpoints.',
     tags: ['React', 'JavaScript', 'Responsive UI', 'Modular Architecture'],
     githubUrl: 'https://github.com/Hardik637/dubai-luxury-real-estate-backup.git',
     liveUrl: null,
     isLive: false,
     isConcept: false,
-    statusLabel: 'Codebase Verified',
-    themeAccent: 'gold', // for visual framing
+    statusLabel: 'Repository Available',
+    themeAccent: 'gold',
     accentDetails: {
-      location: 'Dubai, UAE',
-      deliverable: 'Web Experience',
-      focus: 'High-End Real Estate'
+      location: 'Dubai Concept',
+      deliverable: 'Frontend Interface',
+      focus: 'Property Showcase'
     }
   },
   {
@@ -26,19 +26,19 @@ export const projectsData = [
     eyebrow: '02 / TRADE & EDUCATION PLATFORM',
     title: 'Export Easy Hai',
     category: 'Education & Web',
-    domain: 'Import/Export Global Commerce Academy',
-    description: 'A storytelling-oriented educational platform built to simplify global commerce and cross-border trade for entrepreneurs. Designed with conversion-focused curriculum flows, responsive layouts, and interactive enrollment touchpoints.',
+    domain: 'Import/Export Educational Platform',
+    description: 'A storytelling-oriented landing page and educational portal designed to introduce international trade concepts to entrepreneurs. Built with HTML5, CSS3, JavaScript, and Bootstrap, and deployed on Vercel.',
     tags: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'Vercel'],
     githubUrl: 'https://github.com/Hardik637/export-easy-hai.git',
     liveUrl: 'https://export-easy-hai.vercel.app/',
     isLive: true,
     isConcept: false,
-    statusLabel: 'Live Production Platform',
+    statusLabel: 'Live Website',
     themeAccent: 'emerald',
     accentDetails: {
       deployment: 'Vercel Edge',
-      audience: 'Global Exporters',
-      focus: 'Storytelling & Conversion'
+      audience: 'Trade Learners',
+      focus: 'Landing Page & Curriculum'
     }
   },
   {
@@ -47,19 +47,19 @@ export const projectsData = [
     eyebrow: '03 / CONCEPT & DESIGN SHOWCASE',
     title: 'Kala: Cakes & Desserts',
     category: 'E-Commerce',
-    domain: 'Boutique Bakery & Confectionery E-Commerce',
-    description: 'An artisanal e-commerce concept crafted for a high-end dessert brand. Explores sensory product hierarchies across signature cakes, dessert tubs, brownies, and cookies, paired with a frictionless checkout UX.',
+    domain: 'Boutique Bakery Concept',
+    description: 'An artisanal e-commerce UI concept crafted for a dessert brand. Explores menu hierarchy across cakes, dessert tubs, brownies, and cookies, paired with clean cart and checkout interface prototypes.',
     tags: ['E-Commerce UI', 'React', 'Component Systems', 'UX Architecture'],
     githubUrl: 'https://github.com/Hardik637/Kala-cake-and-dessert.git',
     liveUrl: null,
     isLive: false,
     isConcept: true,
-    statusLabel: 'Concept & Design Showcase',
+    statusLabel: 'Concept Showcase',
     themeAccent: 'rose',
     accentDetails: {
       type: 'Concept Exploration',
       catalog: 'Cakes, Tubs, Brownies',
-      focus: 'Sensory Brand UI'
+      focus: 'Brand Interface UI'
     }
   },
   {
@@ -68,19 +68,19 @@ export const projectsData = [
     eyebrow: '04 / ART & CURATED COMMERCE',
     title: 'Art E-Commerce Gallery',
     category: 'E-Commerce',
-    domain: 'Contemporary Wall Art & Sculptures',
-    description: 'A refined online commerce experience for contemporary wall art, sculptural decor, and limited edition prints. Features museum-style negative space, curated collection filters, artwork dimensions, and a streamlined cart interface.',
-    tags: ['JavaScript', 'E-Commerce', 'CSS Grid', 'Interactive UI'],
+    domain: 'Contemporary Wall Art & Decor Store',
+    description: 'An online store interface designed for contemporary wall art, sculptures, and decorative pieces. Explores gallery collection grids, artwork detail layouts, and a clean shopping cart experience.',
+    tags: ['JavaScript', 'E-Commerce UI', 'CSS Grid', 'Interactive UI'],
     githubUrl: 'https://github.com/Hardik637/Art-ecommerce.git',
     liveUrl: null,
     isLive: false,
     isConcept: false,
-    statusLabel: 'Codebase Verified',
+    statusLabel: 'Repository Available',
     themeAccent: 'slate',
     accentDetails: {
-      niche: 'Curated Gallery',
+      niche: 'Art Storefront',
       curation: 'Sculptures & Prints',
-      focus: 'Editorial E-Commerce'
+      focus: 'Product Presentation'
     }
   }
 ];

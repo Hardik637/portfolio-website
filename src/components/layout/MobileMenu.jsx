@@ -1,13 +1,80 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ArrowUpRight, Mail } from 'lucide-react';
+import { X, Mail } from 'lucide-react';
 import { ThemeToggle } from '../common/ThemeToggle';
 
-export const MobileMenu = ({ isOpen, onClose, navLinks, activeId }) => {
+export const MobileMenu = ({ isOpen, onClose, navLinks, activeId, triggerRef }) => {
+  const dialogRef = useRef(null);
+  const closeButtonRef = useRef(null);
+
+  // Background scroll locking
+  useEffect(() => {
+    if (isOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [isOpen]);
+
+  // Focus management & Escape key handling
+  useEffect(() => {
+    if (isOpen) {
+      // Focus close button when opened
+      const timer = setTimeout(() => {
+        closeButtonRef.current?.focus();
+      }, 50);
+
+      // Return focus to trigger when closed
+      return () => {
+        clearTimeout(timer);
+        triggerRef?.current?.focus();
+      };
+    }
+  }, [isOpen, triggerRef]);
+
+  // Trap focus inside modal & listen to Escape key
+  const handleKeyDown = (e) => {
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      onClose();
+      return;
+    }
+
+    if (e.key === 'Tab' && dialogRef.current) {
+      const focusable = dialogRef.current.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      if (!focusable.length) return;
+
+      const firstEl = focusable[0];
+      const lastEl = focusable[focusable.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstEl) {
+          e.preventDefault();
+          lastEl.focus();
+        }
+      } else {
+        if (document.activeElement === lastEl) {
+          e.preventDefault();
+          firstEl.focus();
+        }
+      }
+    }
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
+          ref={dialogRef}
+          role="dialog"
+          aria-modal="true"
+          id="mobile-navigation-menu"
+          aria-label="Mobile Navigation Menu"
+          onKeyDown={handleKeyDown}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -28,9 +95,10 @@ export const MobileMenu = ({ isOpen, onClose, navLinks, activeId }) => {
             <div className="flex items-center gap-3">
               <ThemeToggle />
               <button
+                ref={closeButtonRef}
                 onClick={onClose}
-                className="w-10 h-10 rounded-lg border border-border bg-surface flex items-center justify-center text-text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-                aria-label="Close menu"
+                className="w-10 h-10 rounded-lg border border-border bg-surface flex items-center justify-center text-text-primary hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent cursor-pointer"
+                aria-label="Close navigation menu"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -38,7 +106,7 @@ export const MobileMenu = ({ isOpen, onClose, navLinks, activeId }) => {
           </div>
 
           {/* Staggered Navigation Links */}
-          <nav className="flex flex-col gap-5 my-auto">
+          <nav className="flex flex-col gap-5 my-auto" aria-label="Mobile Navigation Links">
             {navLinks.map((link, idx) => {
               const isActive = activeId === link.id;
               return (
@@ -49,7 +117,7 @@ export const MobileMenu = ({ isOpen, onClose, navLinks, activeId }) => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.05 * idx, duration: 0.3 }}
-                  className={`group flex items-baseline justify-between py-2 border-b border-border/40 text-2xl font-heading font-semibold transition-colors ${
+                  className={`group flex items-baseline justify-between py-2 border-b border-border/40 text-2xl font-heading font-semibold transition-colors focus:outline-none focus-visible:text-accent ${
                     isActive ? 'text-accent' : 'text-text-primary hover:text-accent'
                   }`}
                 >
@@ -67,7 +135,7 @@ export const MobileMenu = ({ isOpen, onClose, navLinks, activeId }) => {
           <div className="border-t border-border pt-6 flex flex-col gap-4">
             <a
               href="mailto:hardikagarwal@gmail.com"
-              className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-accent text-obsidian font-semibold text-sm"
+              className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-accent text-obsidian font-semibold text-sm hover:brightness-105 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
               <Mail className="w-4 h-4" />
               Let's Talk — hardikagarwal@gmail.com

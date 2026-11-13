@@ -372,9 +372,13 @@ This section confirms that all conceptual, strategic, and visual planning is fin
 - *Strict Rule:* No repository cloning, code modifications, or asset capture during Phase 1.
 
 ### 8.5 Remaining Assets Required for Later Phases
-- High-resolution WebP captures of the 4 project interfaces (to be generated in Phase 3).
-- Custom SVG icons for tech stack and monogram.
-- OpenGraph preview image (`og-image.png`) for social sharing on LinkedIn and Twitter/X.
+- High-resolution authentic browser screenshots of the project interfaces (to be captured in Phase 3).
+- Custom 1200 × 630 Social Preview Image Plan:
+  - Format: SVG / PNG at exactly 1200px width by 630px height.
+  - Background: Obsidian `#101110` with subtle architectural grid overlay.
+  - Typography: Space Grotesk headline *"Building digital experiences that move businesses forward."* paired with Playfair Display italic accent on *"forward"*.
+  - Monogram & Details: `HA` brand monogram in `#C6F36A` Electric Lime, status chip *"AVAILABLE FOR PROJECTS"*, direct email `hardikagarwal@gmail.com`, and GitHub handle `github.com/Hardik637`.
+  - Canonical location: `public/og-image.svg` (and fallback `public/og-image.png`).
 
 ### 8.6 Technical Implementation Sequence (Phase 2 Roadmap)
 1. **Step 1 — Project Scaffolding:** Initialize Vite + React project, install Tailwind CSS, Framer Motion, and Lucide React.

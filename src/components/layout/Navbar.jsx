@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Menu } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Container } from './Container';
@@ -8,6 +8,7 @@ import { useScrollSpy } from '../../hooks/useScrollSpy';
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const mobileTriggerRef = useRef(null);
 
   const navLinks = [
     { id: 'work', label: 'Work' },
@@ -18,13 +19,16 @@ export const Navbar = () => {
   ];
 
   const sectionIds = navLinks.map(link => link.id);
-  const activeId = useScrollSpy(sectionIds, 150);
+  const activeId = useScrollSpy(sectionIds);
 
   return (
     <>
       <header className="sticky top-0 z-40 w-full pt-4 pb-2 transition-all duration-300">
         <Container>
-          <nav className="flex items-center justify-between px-4 sm:px-6 py-3 rounded-xl border border-border/70 bg-surface/75 backdrop-blur-md shadow-sm">
+          <nav
+            aria-label="Primary Navigation"
+            className="flex items-center justify-between px-4 sm:px-6 py-3 rounded-xl border border-border/70 bg-surface/75 backdrop-blur-md shadow-sm"
+          >
             {/* Brand Monogram & Name */}
             <a
               href="#"
@@ -52,7 +56,8 @@ export const Navbar = () => {
                   <a
                     key={link.id}
                     href={`#${link.id}`}
-                    className={`relative px-3.5 py-1.5 text-xs font-mono tracking-wide rounded-md transition-colors ${
+                    aria-current={isActive ? 'page' : undefined}
+                    className={`relative px-3.5 py-1.5 text-xs font-mono tracking-wide rounded-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
                       isActive
                         ? 'text-text-primary font-semibold'
                         : 'text-text-secondary hover:text-text-primary'
@@ -89,16 +94,19 @@ export const Navbar = () => {
               {/* CTA Link (Desktop) */}
               <a
                 href="#contact"
-                className="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-accent text-obsidian font-semibold text-xs tracking-wide hover:brightness-105 active:scale-[0.98] transition-all"
+                className="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-accent text-obsidian font-semibold text-xs tracking-wide hover:brightness-105 active:scale-[0.98] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >
                 Let's Talk
               </a>
 
               {/* Mobile Menu Trigger */}
               <button
-                onClick={() => setMobileMenuOpen(true)}
-                className="md:hidden w-10 h-10 rounded-lg border border-border bg-surface flex items-center justify-center text-text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-                aria-label="Open mobile navigation"
+                ref={mobileTriggerRef}
+                onClick={() => setMobileMenuOpen(prev => !prev)}
+                aria-expanded={mobileMenuOpen}
+                aria-controls="mobile-navigation-menu"
+                aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                className="md:hidden w-10 h-10 rounded-lg border border-border bg-surface flex items-center justify-center text-text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-accent cursor-pointer"
               >
                 <Menu className="w-5 h-5" />
               </button>
@@ -107,12 +115,13 @@ export const Navbar = () => {
         </Container>
       </header>
 
-      {/* Full-screen Mobile Menu */}
+      {/* Full-screen Mobile Menu with Keyboard Navigation and Focus Trap */}
       <MobileMenu
         isOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
         navLinks={navLinks}
         activeId={activeId}
+        triggerRef={mobileTriggerRef}
       />
     </>
   );
