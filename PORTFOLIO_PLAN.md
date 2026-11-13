@@ -140,14 +140,15 @@ The website is engineered as a high-density, single-page narrative with persiste
 
 #### Project 03: KALA: CAKES & DESSERTS
 - **Domain:** Boutique Bakery E-Commerce Concept.
-- **Status:** **CONCEPT PROJECT / DESIGN SHOWCASE** *(Explicitly presented as a concept showcase, not an active client deployment).*
+- **Status:** **CONCEPT PROJECT / DESIGN SHOWCASE** *(Explicitly presented as a concept showcase, backed by authentic repository).*
 - **Layout Style:** Editorial boutique card with rich sensory visual hierarchy.
+- **Repository:** `https://github.com/Hardik637/Kala-cake-and-dessert.git`
 - **Details:**
   - *Tag:* `03 / CONCEPT & DESIGN SHOWCASE`
   - *Title:* `Kala: Cakes & Desserts`
   - *Overview:* Visual-first e-commerce concept crafted for a boutique bakery brand, emphasizing product indulgence, custom dietary categorization (cakes, dessert tubs, brownies, cookies), and a streamlined, frictionless checkout UX.
   - *Tech Tags:* `E-Commerce UI` `React` `Responsive Architecture` `Component Systems`
-  - *Links:* Concept Showcase Badge / Repository status if verified.
+  - *Links:* GitHub Repository link + Concept Showcase Badge.
 
 #### Project 04: ART E-COMMERCE
 - **Domain:** Fine Art, Sculptures & Decorative Objects.

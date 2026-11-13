@@ -34,7 +34,8 @@ Personal portfolio website for **Hardik Agarwal** — Web Developer & Digital Ex
 
 3. **Kala: Cakes & Desserts**  
    - Domain: Boutique Bakery & Confectionery E-Commerce  
-   - Status: Concept & Design Showcase
+   - Status: Concept & Design Showcase  
+   - Repository: [Kala-cake-and-dessert](https://github.com/Hardik637/Kala-cake-and-dessert.git)
 
 4. **Art E-Commerce Gallery**  
    - Domain: Contemporary Wall Art, Sculptural Decor & Prints  

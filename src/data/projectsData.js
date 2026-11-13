@@ -50,7 +50,7 @@ export const projectsData = [
     domain: 'Boutique Bakery & Confectionery E-Commerce',
     description: 'An artisanal e-commerce concept crafted for a high-end dessert brand. Explores sensory product hierarchies across signature cakes, dessert tubs, brownies, and cookies, paired with a frictionless checkout UX.',
     tags: ['E-Commerce UI', 'React', 'Component Systems', 'UX Architecture'],
-    githubUrl: null,
+    githubUrl: 'https://github.com/Hardik637/Kala-cake-and-dessert.git',
     liveUrl: null,
     isLive: false,
     isConcept: true,
