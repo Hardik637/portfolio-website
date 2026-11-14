@@ -1,31 +1,18 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, ArrowUpRight, Lock, Globe, Code, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Globe } from 'lucide-react';
 import { Badge } from '../common/Badge';
 
 export const ProjectCard = ({ project, index }) => {
   const isEven = index % 2 === 0;
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  // Neutral, authentic address bar label (no fabricated URLs)
+  // Clean, authentic address bar label
   const getDisplayLocation = () => {
     if (project.liveUrl) {
       return project.liveUrl.replace(/^https?:\/\//, '').replace(/\/$/, '');
     }
-    if (project.isConcept) {
-      return 'Concept showcase';
-    }
-    return 'GitHub repository';
-  };
-
-  const getLocationIcon = () => {
-    if (project.liveUrl) {
-      return <Globe className="w-3 h-3 text-emerald-400 shrink-0" />;
-    }
-    if (project.isConcept) {
-      return <Sparkles className="w-3 h-3 text-pink-400 shrink-0" />;
-    }
-    return <Code className="w-3 h-3 text-accent shrink-0" />;
+    return 'Website';
   };
 
   return (
@@ -53,20 +40,34 @@ export const ProjectCard = ({ project, index }) => {
               <span className="w-2.5 h-2.5 rounded-full bg-border" />
             </div>
 
-            {/* Address Bar Pill with Authentic Target */}
-            <div className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-bg-primary/80 border border-border/70 text-[11px] text-text-secondary max-w-[260px] truncate">
-              {getLocationIcon()}
+            {/* Address Bar Pill with Direct Link */}
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-bg-primary/80 border border-border/70 text-[11px] text-text-secondary hover:text-accent hover:border-accent/40 transition-colors max-w-[260px] truncate group/addr"
+              title={`Open ${project.title} (${getDisplayLocation()})`}
+            >
+              <Globe className="w-3 h-3 text-emerald-400 shrink-0" />
               <span className="truncate">{getDisplayLocation()}</span>
-            </div>
+              <ArrowUpRight className="w-2.5 h-2.5 opacity-0 group-hover/addr:opacity-100 transition-opacity shrink-0 text-accent" />
+            </a>
 
             {/* Status Indicator */}
-            <span className="text-[10px] uppercase tracking-wider text-text-secondary font-mono">
-              {project.isLive ? 'Live' : project.isConcept ? 'Concept' : 'Repository'}
+            <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-emerald-400 font-mono font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              Live
             </span>
           </div>
 
           {/* Screenshot Container with Adaptive Aspect Ratio */}
-          <div className="relative w-full aspect-[390/844] sm:aspect-[16/10] overflow-hidden bg-bg-primary">
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative block w-full aspect-[390/844] sm:aspect-[16/10] overflow-hidden bg-bg-primary cursor-pointer group/img"
+            aria-label={`Open ${project.title} live website`}
+          >
             {/* Skeleton placeholder during initial decode */}
             {!imageLoaded && (
               <div className="absolute inset-0 bg-bg-secondary animate-pulse" />
@@ -88,12 +89,12 @@ export const ProjectCard = ({ project, index }) => {
                 decoding="async"
                 onLoad={() => setImageLoaded(true)}
                 onError={() => setImageLoaded(true)}
-                className={`w-full h-full object-cover object-top transition-transform duration-700 ease-luxury group-hover:scale-[1.015] ${
+                className={`w-full h-full object-cover object-top transition-transform duration-700 ease-luxury group-hover/img:scale-[1.02] ${
                   imageLoaded ? 'opacity-100' : 'opacity-0'
                 }`}
               />
             </picture>
-          </div>
+          </a>
         </div>
 
         {/* Content Column (Cols 8-12) */}
@@ -105,23 +106,9 @@ export const ProjectCard = ({ project, index }) => {
                 {project.eyebrow}
               </span>
 
-              {project.isLive && (
-                <Badge variant="live" dot={true}>
-                  Live Website
-                </Badge>
-              )}
-
-              {project.isConcept && (
-                <Badge variant="concept">
-                  Concept Showcase
-                </Badge>
-              )}
-
-              {!project.isLive && !project.isConcept && (
-                <Badge variant="default">
-                  Repository Available
-                </Badge>
-              )}
+              <Badge variant="live" dot={true}>
+                Live Website
+              </Badge>
             </div>
 
             {/* Title */}
@@ -156,29 +143,11 @@ export const ProjectCard = ({ project, index }) => {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-accent text-obsidian text-xs font-semibold hover:brightness-105 transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-obsidian text-xs font-semibold hover:brightness-105 active:scale-[0.98] transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent shadow-sm"
               >
                 <span>Visit Live Website</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
-            )}
-
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-border bg-bg-secondary text-text-primary text-xs font-mono hover:border-text-secondary hover:text-accent transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-              >
-                <Github className="w-3.5 h-3.5" />
-                <span>View Repository</span>
-              </a>
-            )}
-
-            {project.isConcept && (
-              <span className="text-xs font-mono text-text-secondary italic">
-                * Design showcase exploring interface & interaction patterns
-              </span>
             )}
           </div>
         </div>
