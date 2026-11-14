@@ -22,86 +22,87 @@ export const ProjectCard = ({ project, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative rounded-2xl border border-border bg-surface overflow-hidden hover:border-text-secondary/50 transition-all duration-500 shadow-sm"
+      className="group relative rounded-xl sm:rounded-2xl border border-border bg-surface overflow-hidden hover:border-text-secondary/50 transition-all duration-300 shadow-sm flex flex-col h-full"
     >
       {/* ─────────────────────────────────────────────────────────────
-          1. DEDICATED MOBILE SHOWCASE CARD (Visible on < lg screens)
+          1. COMPACT 2-IN-1-ROW MOBILE SHOWCASE (Visible on < lg screens)
          ───────────────────────────────────────────────────────────── */}
-      <div className="lg:hidden p-5 sm:p-7 flex flex-col gap-4">
-        {/* Top Eyebrow & Live Badge */}
-        <div className="flex items-center justify-between gap-2">
-          <span className="font-mono text-[11px] text-text-secondary uppercase tracking-widest font-semibold">
-            {project.eyebrow}
-          </span>
-          <Badge variant="live" dot={true}>
-            Live Website
-          </Badge>
-        </div>
+      <div className="lg:hidden flex flex-col h-full">
+        {/* Clickable Image Preview */}
+        <a
+          href={project.liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative block w-full aspect-[16/10] bg-bg-secondary overflow-hidden group/img cursor-pointer border-b border-border/60"
+          aria-label={`Open ${project.title} live website`}
+        >
+          {/* Top Live Badge */}
+          <div className="absolute top-1.5 left-1.5 xs:top-2 xs:left-2 z-10 flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-obsidian/85 border border-border/80 text-[9px] xs:text-[10px] font-mono text-emerald-400 backdrop-blur-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span>Live</span>
+          </div>
 
-        {/* Title & Tagline */}
-        <div>
-          <h3 className="font-heading text-xl sm:text-2xl font-bold text-text-primary tracking-tight">
-            {project.title}
-          </h3>
-          <p className="text-xs font-mono text-accent mt-0.5">
-            {project.domain}
-          </p>
-        </div>
+          {/* Top Right External Arrow */}
+          <div className="absolute top-1.5 right-1.5 xs:top-2 xs:right-2 z-10 p-1 rounded-full bg-obsidian/80 text-text-secondary border border-border/80">
+            <ArrowUpRight className="w-2.5 h-2.5 text-accent" />
+          </div>
 
-        {/* Smartphone Showcase Frame */}
-        <div className="py-4 px-2 rounded-2xl bg-bg-secondary/40 border border-border/60 flex justify-center items-center">
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative block w-[200px] xs:w-[220px] aspect-[390/844] rounded-[24px] border-[5px] border-border bg-surface shadow-2xl overflow-hidden group/phone transition-transform duration-300 hover:scale-[1.02]"
-            aria-label={`Open ${project.title} live website`}
-          >
-            {/* Dynamic Island / Speaker notch */}
-            <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-14 h-3 bg-border/80 rounded-full z-10" />
+          {/* Screenshot Image */}
+          <img
+            src={project.image}
+            alt={project.imageAlt || `${project.title} interface preview`}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover/img:scale-105"
+          />
+        </a>
 
-            {/* Live Website Mobile Screenshot */}
-            <img
-              src={project.mobileImage}
-              alt={project.imageAlt || `${project.title} interface preview`}
-              loading="lazy"
-              decoding="async"
-              className="w-full h-full object-cover object-top"
-            />
-
-            {/* Floating Domain Pill */}
-            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-obsidian/85 text-text-primary border border-border/80 text-[10px] font-mono flex items-center gap-1.5 backdrop-blur-sm whitespace-nowrap shadow-md">
-              <Globe className="w-2.5 h-2.5 text-emerald-400" />
-              <span>{getDisplayLocation()}</span>
-              <ArrowUpRight className="w-2.5 h-2.5 text-accent" />
+        {/* Compact Card Content Area */}
+        <div className="p-2.5 xs:p-3 sm:p-4 flex flex-col flex-1 justify-between gap-2">
+          <div>
+            {/* Category Eyebrow & Number */}
+            <div className="flex items-center justify-between text-[9px] xs:text-[10px] font-mono text-text-secondary uppercase tracking-wider mb-1">
+              <span className="truncate max-w-[80%]">{project.category}</span>
+              <span className="text-accent font-semibold">{project.number}</span>
             </div>
-          </a>
-        </div>
 
-        {/* Description */}
-        <p className="text-sm text-text-secondary leading-relaxed font-sans">
-          {project.description}
-        </p>
+            {/* Title */}
+            <h3 className="font-heading text-xs xs:text-sm sm:text-base font-bold text-text-primary tracking-tight line-clamp-1 group-hover:text-accent transition-colors">
+              {project.title}
+            </h3>
 
-        {/* Technology Tags */}
-        <div className="flex flex-wrap gap-1.5">
-          {project.tags.map(tag => (
-            <Badge key={tag} variant="tech">
-              {tag}
-            </Badge>
-          ))}
-        </div>
+            {/* Domain / Subtitle */}
+            <p className="text-[10px] xs:text-[11px] font-mono text-accent/90 line-clamp-1 mt-0.5">
+              {project.domain}
+            </p>
 
-        {/* Bottom CTA Button */}
-        <div className="pt-3 border-t border-border mt-1">
+            {/* Compact Tech Tags */}
+            <div className="flex flex-wrap gap-1 mt-1.5">
+              {project.tags.slice(0, 2).map(tag => (
+                <span
+                  key={tag}
+                  className="px-1.5 py-0.5 text-[8px] xs:text-[9px] font-mono rounded bg-bg-secondary text-text-secondary border border-border/50 truncate max-w-[80px]"
+                >
+                  {tag}
+                </span>
+              ))}
+              {project.tags.length > 2 && (
+                <span className="px-1 py-0.5 text-[8px] xs:text-[9px] font-mono text-text-secondary/70">
+                  +{project.tags.length - 2}
+                </span>
+              )}
+            </div>
+          </div>
+
+          {/* Action Link Button */}
           <a
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-accent text-obsidian text-xs font-semibold hover:brightness-105 active:scale-[0.98] transition-all shadow-sm"
+            className="w-full inline-flex items-center justify-center gap-1 py-1.5 xs:py-2 px-2 rounded-lg bg-accent text-obsidian text-[10px] xs:text-xs font-semibold hover:brightness-105 active:scale-[0.98] transition-all shadow-xs mt-1"
           >
-            <span>Visit Live Website</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
+            <span>Visit Site</span>
+            <ArrowUpRight className="w-3 h-3" />
           </a>
         </div>
       </div>

@@ -43,8 +43,8 @@ export const SelectedWork = () => {
           </div>
         </div>
 
-        {/* Asymmetric Project Cards Stack */}
-        <div className="flex flex-col gap-8 sm:gap-10 md:gap-14">
+        {/* Compact 2-in-1-row Grid on Mobile, Asymmetric Stack on Desktop */}
+        <div className="grid grid-cols-2 gap-2.5 xs:gap-3 sm:gap-4 lg:flex lg:flex-col lg:gap-14">
           {filteredProjects.map((project, index) => (
             <ProjectCard
               key={project.id}
