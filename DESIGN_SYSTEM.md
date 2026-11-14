@@ -131,7 +131,7 @@ All margins, paddings, and structural gaps strictly derive from an 8pt base unit
   - *Active:* `scale(0.98)`.
 
 #### One-Click Copy Email Pill (`.copy-email-control`)
-- **Appearance:** Tactile input-style pill containing the email address (`hardikagarwal@gmail.com`), a subtle copy icon, and an interactive hover highlight.
+- **Appearance:** Tactile input-style pill containing the email address (`hardikagarwal201@gmail.com`), a subtle copy icon, and an interactive hover highlight.
 - **Interaction States:**
   - *Default:* Bordered container (`border border-border bg-surface text-primary`), copy icon at right.
   - *Hover:* Border illuminates to `--color-accent`, cursor changes to pointer.

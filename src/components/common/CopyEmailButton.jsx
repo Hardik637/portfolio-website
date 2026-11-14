@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Copy, Check, AlertCircle, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export const CopyEmailButton = ({ email = 'hardikagarwal@gmail.com', className = '' }) => {
+export const CopyEmailButton = ({ email = 'hardikagarwal201@gmail.com', className = '' }) => {
   // status: 'idle' | 'success' | 'error'
   const [copyStatus, setCopyStatus] = useState('idle');
   const timeoutRef = useRef(null);

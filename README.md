@@ -74,7 +74,7 @@ npm run preview
 
 ## 📬 Contact & Connect
 
-- **Direct Email:** [hardikagarwal@gmail.com](mailto:hardikagarwal@gmail.com)
+- **Direct Email:** [hardikagarwal201@gmail.com](mailto:hardikagarwal201@gmail.com)
 - **LinkedIn:** [linkedin.com/in/hardik-agarwal-b738802b8](https://www.linkedin.com/in/hardik-agarwal-b738802b8)
 - **GitHub:** [github.com/Hardik637](https://github.com/Hardik637)
 

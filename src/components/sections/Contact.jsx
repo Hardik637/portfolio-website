@@ -46,7 +46,7 @@ export const Contact = () => {
               <span className="text-xs font-mono text-text-secondary uppercase tracking-widest block mb-3 font-semibold">
                 Direct Email Inquiries:
               </span>
-              <CopyEmailButton email="hardikagarwal@gmail.com" />
+              <CopyEmailButton email="hardikagarwal201@gmail.com" />
             </div>
 
             {/* Professional Profiles */}

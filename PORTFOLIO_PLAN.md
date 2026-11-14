@@ -21,7 +21,7 @@ The portfolio follows an **Editorial Contemporary Creative Direction** (clean ty
 - **Approved Supporting Narrative:**
   > *"I design and develop modern websites, e-commerce experiences and custom web solutions that combine thoughtful design with reliable functionality."*
 - **Education:** Currently pursuing Bachelor of Computer Applications (BCA) at Manipal University Jaipur.
-- **Confirmed Contact Email:** `hardikagarwal@gmail.com`
+- **Confirmed Contact Email:** `hardikagarwal201@gmail.com`
 - **Confirmed LinkedIn:** `https://www.linkedin.com/in/hardik-agarwal-b738802b8`
 - **Freelance Platforms:** Fiverr is strictly omitted from the visible interface until an active profile URL is provided. No placeholder links or fake accounts will be displayed.
 
@@ -65,7 +65,7 @@ The website is engineered as a high-density, single-page narrative with persiste
 │     - Modern Enhancements: Tailwind CSS, Motion/Framer, Git, Vercel    │
 ├────────────────────────────────────────────────────────────────────────┤
 │ 07. CONTACT & FOOTER (Conversion Terminal)                             │
-│     - Primary Email: hardikagarwal@gmail.com                           │
+│     - Primary Email: hardikagarwal201@gmail.com                        │
 │     - Direct Mailto Trigger & One-Click Copy Interaction with Feedback │
 │     - Verified Links: GitHub, LinkedIn (Fiverr Omitted)                │
 │     - Colophon & Local Time Status Node                                │
@@ -200,9 +200,9 @@ The website is engineered as a high-density, single-page narrative with persiste
 ### SECTION 07 — CONTACT & FOOTER: "CONVERSION TERMINAL"
 - **Strategic Goal:** Frictionless inquiry conversion for freelance clients and collaborators.
 - **Confirmed Contact Details & Interactions:**
-  - **Email Address:** `hardikagarwal@gmail.com`
-  - **Functional `mailto:` Anchor:** Direct link to `mailto:hardikagarwal@gmail.com`.
-  - **One-Click Copy Email Interaction:** High-contrast interactive pill that copies `hardikagarwal@gmail.com` to the user's clipboard and immediately triggers a visual confirmation state (`"Email Copied to Clipboard ✓"`).
+  - **Email Address:** `hardikagarwal201@gmail.com`
+  - **Functional `mailto:` Anchor:** Direct link to `mailto:hardikagarwal201@gmail.com`.
+  - **One-Click Copy Email Interaction:** High-contrast interactive pill that copies `hardikagarwal201@gmail.com` to the user's clipboard and immediately triggers a visual confirmation state (`"Email Copied to Clipboard ✓"`).
   - **LinkedIn Profile Link:** `https://www.linkedin.com/in/hardik-agarwal-b738802b8`
   - **GitHub Profile Link:** `https://github.com/Hardik637`
   - **Fiverr Platform Status:** Strictly omitted from the interface until an active profile link is supplied.
@@ -353,7 +353,7 @@ This section confirms that all conceptual, strategic, and visual planning is fin
 ### 8.2 Confirmed Contact & Social Details
 - **Full Name:** Hardik Agarwal
 - **Professional Title:** Web Developer & Digital Experience Builder
-- **Email:** `hardikagarwal@gmail.com` (with functional `mailto:` link & one-click copy confirmation).
+- **Email:** `hardikagarwal201@gmail.com` (with functional `mailto:` link & one-click copy confirmation).
 - **LinkedIn:** `https://www.linkedin.com/in/hardik-agarwal-b738802b8`
 - **GitHub:** `https://github.com/Hardik637`
 - **Fiverr:** Omitted completely from the visible interface until a verified profile URL is provided.
@@ -377,7 +377,7 @@ This section confirms that all conceptual, strategic, and visual planning is fin
   - Format: SVG / PNG at exactly 1200px width by 630px height.
   - Background: Obsidian `#101110` with subtle architectural grid overlay.
   - Typography: Space Grotesk headline *"Building digital experiences that move businesses forward."* paired with Playfair Display italic accent on *"forward"*.
-  - Monogram & Details: `HA` brand monogram in `#C6F36A` Electric Lime, status chip *"AVAILABLE FOR PROJECTS"*, direct email `hardikagarwal@gmail.com`, and GitHub handle `github.com/Hardik637`.
+  - Monogram & Details: `HA` brand monogram in `#C6F36A` Electric Lime, status chip *"AVAILABLE FOR PROJECTS"*, direct email `hardikagarwal201@gmail.com`, and GitHub handle `github.com/Hardik637`.
   - Canonical location: `public/og-image.svg` (and fallback `public/og-image.png`).
 
 ### 8.6 Technical Implementation Sequence (Phase 2 Roadmap)

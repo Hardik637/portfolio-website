@@ -134,11 +134,11 @@ export const MobileMenu = ({ isOpen, onClose, navLinks, activeId, triggerRef }) 
           {/* Bottom Drawer Actions */}
           <div className="border-t border-border pt-6 flex flex-col gap-4">
             <a
-              href="mailto:hardikagarwal@gmail.com"
+              href="mailto:hardikagarwal201@gmail.com"
               className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-accent text-obsidian font-semibold text-sm hover:brightness-105 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
               <Mail className="w-4 h-4" />
-              Let's Talk — hardikagarwal@gmail.com
+              Let's Talk — hardikagarwal201@gmail.com
             </a>
 
             <div className="flex items-center justify-between text-xs font-mono text-text-secondary pt-2">

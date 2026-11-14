@@ -103,11 +103,11 @@ export const Footer = () => {
               </a>
 
               <a
-                href="mailto:hardikagarwal@gmail.com"
+                href="mailto:hardikagarwal201@gmail.com"
                 className="inline-flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors"
               >
                 <Mail className="w-4 h-4 text-accent" />
-                <span>hardikagarwal@gmail.com</span>
+                <span>hardikagarwal201@gmail.com</span>
               </a>
             </div>
 
