@@ -4,7 +4,6 @@ import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/layout/Navbar';
 import { Hero } from './components/sections/Hero';
 import { SelectedWork } from './components/sections/SelectedWork';
-import { Services } from './components/sections/Services';
 import { About } from './components/sections/About';
 import { TechStack } from './components/sections/TechStack';
 import { Contact } from './components/sections/Contact';
@@ -31,7 +30,6 @@ export const App = () => {
           <main id="main-content" className="flex-1">
             <Hero />
             <SelectedWork />
-            <Services />
             <About />
             <TechStack />
             <Contact />

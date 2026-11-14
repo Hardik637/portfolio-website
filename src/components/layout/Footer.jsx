@@ -65,16 +65,13 @@ export const Footer = () => {
                 <a href="#work" className="hover:text-accent transition-colors">01. Selected Work</a>
               </li>
               <li>
-                <a href="#services" className="hover:text-accent transition-colors">02. Capabilities & Services</a>
+                <a href="#about" className="hover:text-accent transition-colors">02. Background & Approach</a>
               </li>
               <li>
-                <a href="#about" className="hover:text-accent transition-colors">03. Background & Approach</a>
+                <a href="#tech" className="hover:text-accent transition-colors">03. Tech Stack</a>
               </li>
               <li>
-                <a href="#tech" className="hover:text-accent transition-colors">04. Tech Stack</a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-accent transition-colors">05. Start a Project</a>
+                <a href="#contact" className="hover:text-accent transition-colors">04. Start a Project</a>
               </li>
             </ul>
           </div>

@@ -7,10 +7,10 @@ import { Terminal, Wrench } from 'lucide-react';
 
 export const TechStack = () => {
   return (
-    <section id="tech" className="py-20 md:py-32 bg-bg-secondary/40 border-y border-border scroll-mt-20">
+    <section id="tech" className="py-20 md:py-32 scroll-mt-20">
       <Container>
         <SectionHeading
-          eyebrow="04 // TECH STACK"
+          eyebrow="03 // TECH STACK"
           title="Practical, battle-tested technologies."
           subtitle="A focused toolkit of core web standards, reactive frontend frameworks, and modern developer tooling. No inflated buzzwords—only tools I actively use."
         />

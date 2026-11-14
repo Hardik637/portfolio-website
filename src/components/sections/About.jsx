@@ -6,10 +6,10 @@ import { GraduationCap, Code2, Layers, Cpu } from 'lucide-react';
 
 export const About = () => {
   return (
-    <section id="about" className="py-20 md:py-32 scroll-mt-20">
+    <section id="about" className="py-20 md:py-32 bg-bg-secondary/40 border-y border-border scroll-mt-20">
       <Container>
         <SectionHeading
-          eyebrow="03 // BACKGROUND & APPROACH"
+          eyebrow="02 // BACKGROUND & APPROACH"
           title="Bridging design aesthetics with reliable engineering."
           subtitle="A developer who understands that clean code, thoughtful typography, and intuitive UX are inseparable parts of a successful product."
         />

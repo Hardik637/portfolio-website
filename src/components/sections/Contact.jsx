@@ -24,7 +24,7 @@ export const Contact = () => {
             <div className="inline-flex items-center gap-2 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
               <span className="font-mono text-xs uppercase tracking-widest text-text-secondary font-medium">
-                05 // GET IN TOUCH
+                04 // GET IN TOUCH
               </span>
             </div>
 

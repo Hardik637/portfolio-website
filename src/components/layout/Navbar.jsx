@@ -12,7 +12,6 @@ export const Navbar = () => {
 
   const navLinks = [
     { id: 'work', label: 'Work' },
-    { id: 'services', label: 'Services' },
     { id: 'about', label: 'About' },
     { id: 'tech', label: 'Tech Stack' },
     { id: 'contact', label: 'Contact' },
