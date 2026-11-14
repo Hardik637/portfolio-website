@@ -1,158 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Building2, Globe, Cake, Palette, ArrowUpRight } from 'lucide-react';
+import { Github, ArrowUpRight, Lock, Globe, Code, Sparkles } from 'lucide-react';
 import { Badge } from '../common/Badge';
 
 export const ProjectCard = ({ project, index }) => {
   const isEven = index % 2 === 0;
+  const [imageLoaded, setImageLoaded] = useState(false);
 
-  // Visual interface placeholder representing the project's brand palette & layout
-  const renderVisualPlaceholder = () => {
-    switch (project.id) {
-      case 'dubai-luxury-real-estate':
-        return (
-          <div className="relative w-full h-full min-h-[260px] sm:min-h-[320px] bg-gradient-to-br from-[#121312] via-[#1a1c18] to-[#252822] p-6 flex flex-col justify-between overflow-hidden">
-            <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#C6F36A_1px,transparent_1px)] [background-size:16px_16px]" />
-            <div className="flex items-center justify-between z-10">
-              <span className="text-[10px] font-mono tracking-widest text-[#E6C687] uppercase border border-[#E6C687]/30 px-2 py-0.5 rounded">
-                PROPERTY SHOWCASE
-              </span>
-              <Building2 className="w-4 h-4 text-[#E6C687]" />
-            </div>
-
-            <div className="z-10 my-auto py-4">
-              <span className="text-xs font-mono text-text-secondary uppercase tracking-widest block mb-1">
-                Visual Interface Preview
-              </span>
-              <p className="font-heading text-xl sm:text-2xl font-bold text-parchment tracking-tight">
-                Luxury Villa & Penthouse Listings
-              </p>
-              <div className="mt-3 flex gap-2">
-                <span className="px-2 py-1 rounded bg-black/40 text-[11px] font-mono text-[#E6C687] border border-[#E6C687]/20">
-                  Featured Residences
-                </span>
-                <span className="px-2 py-1 rounded bg-black/40 text-[11px] font-mono text-text-secondary border border-border">
-                  Modular Layout
-                </span>
-              </div>
-            </div>
-
-            <div className="z-10 flex items-center justify-between pt-3 border-t border-border/40 text-[11px] font-mono text-text-secondary">
-              <span>Codebase Interface Preview</span>
-              <span className="text-accent">React • CSS</span>
-            </div>
-          </div>
-        );
-
-      case 'export-easy-hai':
-        return (
-          <div className="relative w-full h-full min-h-[260px] sm:min-h-[320px] bg-gradient-to-br from-[#0c1618] via-[#102220] to-[#152e2a] p-6 flex flex-col justify-between overflow-hidden">
-            <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:20px_20px]" />
-            <div className="flex items-center justify-between z-10">
-              <span className="text-[10px] font-mono tracking-widest text-emerald-400 uppercase border border-emerald-500/30 px-2 py-0.5 rounded flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                LIVE ON VERCEL
-              </span>
-              <Globe className="w-4 h-4 text-emerald-400" />
-            </div>
-
-            <div className="z-10 my-auto py-4">
-              <span className="text-xs font-mono text-emerald-400/80 uppercase tracking-widest block mb-1">
-                Live Deployment
-              </span>
-              <p className="font-heading text-xl sm:text-2xl font-bold text-parchment tracking-tight">
-                Global Trade Educational Platform
-              </p>
-              <p className="text-xs text-text-secondary mt-2 line-clamp-2">
-                Storytelling landing page introducing trade concepts to entrepreneurs.
-              </p>
-            </div>
-
-            <div className="z-10 flex items-center justify-between pt-3 border-t border-border/40 text-[11px] font-mono text-text-secondary">
-              <span>Production Deployment</span>
-              <span className="text-emerald-400">export-easy-hai.vercel.app</span>
-            </div>
-          </div>
-        );
-
-      case 'kala-cakes-desserts':
-        return (
-          <div className="relative w-full h-full min-h-[260px] sm:min-h-[320px] bg-gradient-to-br from-[#1c1416] via-[#241a1c] to-[#2e1d21] p-6 flex flex-col justify-between overflow-hidden">
-            <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#f472b6_1px,transparent_1px)] [background-size:18px_18px]" />
-            <div className="flex items-center justify-between z-10">
-              <span className="text-[10px] font-mono tracking-widest text-pink-300 uppercase border border-pink-400/30 px-2 py-0.5 rounded">
-                CONCEPT SHOWCASE
-              </span>
-              <Cake className="w-4 h-4 text-pink-300" />
-            </div>
-
-            <div className="z-10 my-auto py-4">
-              <span className="text-xs font-mono text-pink-300/80 uppercase tracking-widest block mb-1">
-                Design & Component Concept
-              </span>
-              <p className="font-heading text-xl sm:text-2xl font-bold text-parchment tracking-tight">
-                Patisserie & Dessert Storefront
-              </p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                <span className="px-2 py-0.5 rounded bg-black/40 text-[10px] font-mono text-pink-200 border border-pink-500/20">
-                  Menu UI
-                </span>
-                <span className="px-2 py-0.5 rounded bg-black/40 text-[10px] font-mono text-pink-200 border border-pink-500/20">
-                  Product Hierarchy
-                </span>
-                <span className="px-2 py-0.5 rounded bg-black/40 text-[10px] font-mono text-pink-200 border border-pink-500/20">
-                  Cart Flow
-                </span>
-              </div>
-            </div>
-
-            <div className="z-10 flex items-center justify-between pt-3 border-t border-border/40 text-[11px] font-mono text-text-secondary">
-              <span>Concept Exploration</span>
-              <span className="text-pink-300">UX Architecture</span>
-            </div>
-          </div>
-        );
-
-      case 'art-ecommerce':
-      default:
-        return (
-          <div className="relative w-full h-full min-h-[260px] sm:min-h-[320px] bg-gradient-to-br from-[#121417] via-[#171b21] to-[#1e232b] p-6 flex flex-col justify-between overflow-hidden">
-            <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:16px_16px]" />
-            <div className="flex items-center justify-between z-10">
-              <span className="text-[10px] font-mono tracking-widest text-slate-300 uppercase border border-slate-400/30 px-2 py-0.5 rounded">
-                STOREFRONT SHOWCASE
-              </span>
-              <Palette className="w-4 h-4 text-slate-300" />
-            </div>
-
-            <div className="z-10 my-auto py-4">
-              <span className="text-xs font-mono text-slate-400 uppercase tracking-widest block mb-1">
-                Visual Interface Preview
-              </span>
-              <p className="font-heading text-xl sm:text-2xl font-bold text-parchment tracking-tight">
-                Wall Art & Sculptural Decor Catalog
-              </p>
-              <div className="mt-3 flex gap-2">
-                <span className="px-2 py-1 rounded bg-black/40 text-[11px] font-mono text-slate-300 border border-border">
-                  Grid Layout
-                </span>
-                <span className="px-2 py-1 rounded bg-black/40 text-[11px] font-mono text-slate-300 border border-border">
-                  Cart UI
-                </span>
-              </div>
-            </div>
-
-            <div className="z-10 flex items-center justify-between pt-3 border-t border-border/40 text-[11px] font-mono text-text-secondary">
-              <span>Codebase Interface Preview</span>
-              <span className="text-accent">JavaScript • CSS Grid</span>
-            </div>
-          </div>
-        );
+  // Neutral, authentic address bar label (no fabricated URLs)
+  const getDisplayLocation = () => {
+    if (project.liveUrl) {
+      return project.liveUrl.replace(/^https?:\/\//, '').replace(/\/$/, '');
     }
+    if (project.isConcept) {
+      return 'Concept showcase';
+    }
+    return 'GitHub repository';
+  };
+
+  const getLocationIcon = () => {
+    if (project.liveUrl) {
+      return <Globe className="w-3 h-3 text-emerald-400 shrink-0" />;
+    }
+    if (project.isConcept) {
+      return <Sparkles className="w-3 h-3 text-pink-400 shrink-0" />;
+    }
+    return <Code className="w-3 h-3 text-accent shrink-0" />;
   };
 
   return (
     <motion.article
+      id={project.id}
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
@@ -160,10 +38,61 @@ export const ProjectCard = ({ project, index }) => {
       className="group relative rounded-2xl border border-border bg-surface overflow-hidden hover:border-text-secondary/50 transition-all duration-500 shadow-sm"
     >
       <div className={`grid grid-cols-1 lg:grid-cols-12 gap-0 ${isEven ? '' : 'lg:flex-row-reverse'}`}>
-        {/* Preview Frame Container (Cols 1-7 or 1-6) */}
-        <div className={`lg:col-span-7 overflow-hidden border-b lg:border-b-0 ${isEven ? 'lg:border-r border-border' : 'lg:order-2 lg:border-l border-border'}`}>
-          <div className="relative group-hover:scale-[1.01] transition-transform duration-700 ease-luxury">
-            {renderVisualPlaceholder()}
+        {/* Genuine Browser Frame Viewport (Cols 1-7 or 1-6) */}
+        <div
+          className={`lg:col-span-7 flex flex-col border-b lg:border-b-0 bg-bg-secondary/40 ${
+            isEven ? 'lg:border-r border-border' : 'lg:order-2 lg:border-l border-border'
+          }`}
+        >
+          {/* Browser Window Header Chrome */}
+          <div className="flex items-center justify-between px-4 py-2.5 border-b border-border bg-surface/80 text-xs font-mono">
+            {/* Window Traffic Lights */}
+            <div className="flex items-center gap-1.5" aria-hidden="true">
+              <span className="w-2.5 h-2.5 rounded-full bg-border" />
+              <span className="w-2.5 h-2.5 rounded-full bg-border" />
+              <span className="w-2.5 h-2.5 rounded-full bg-border" />
+            </div>
+
+            {/* Address Bar Pill with Authentic Target */}
+            <div className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-bg-primary/80 border border-border/70 text-[11px] text-text-secondary max-w-[260px] truncate">
+              {getLocationIcon()}
+              <span className="truncate">{getDisplayLocation()}</span>
+            </div>
+
+            {/* Status Indicator */}
+            <span className="text-[10px] uppercase tracking-wider text-text-secondary font-mono">
+              {project.isLive ? 'Live' : project.isConcept ? 'Concept' : 'Repository'}
+            </span>
+          </div>
+
+          {/* Screenshot Container with Adaptive Aspect Ratio */}
+          <div className="relative w-full aspect-[390/844] sm:aspect-[16/10] overflow-hidden bg-bg-primary">
+            {/* Skeleton placeholder during initial decode */}
+            {!imageLoaded && (
+              <div className="absolute inset-0 bg-bg-secondary animate-pulse" />
+            )}
+
+            <picture>
+              {project.mobileImage && (
+                <source
+                  media="(max-width: 639px)"
+                  srcSet={project.mobileImage}
+                  type="image/webp"
+                />
+              )}
+              <source srcSet={project.image} type="image/webp" />
+              <img
+                src={project.image}
+                alt={project.imageAlt || `${project.title} interface preview`}
+                loading="lazy"
+                decoding="async"
+                onLoad={() => setImageLoaded(true)}
+                onError={() => setImageLoaded(true)}
+                className={`w-full h-full object-cover object-top transition-transform duration-700 ease-luxury group-hover:scale-[1.015] ${
+                  imageLoaded ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
+            </picture>
           </div>
         </div>
 
@@ -227,7 +156,7 @@ export const ProjectCard = ({ project, index }) => {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-accent text-obsidian text-xs font-semibold hover:brightness-105 transition-all cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-accent text-obsidian text-xs font-semibold hover:brightness-105 transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >
                 <span>Visit Live Website</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
@@ -239,7 +168,7 @@ export const ProjectCard = ({ project, index }) => {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-border bg-bg-secondary text-text-primary text-xs font-mono hover:border-text-secondary hover:text-accent transition-all cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-border bg-bg-secondary text-text-primary text-xs font-mono hover:border-text-secondary hover:text-accent transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >
                 <Github className="w-3.5 h-3.5" />
                 <span>View Repository</span>

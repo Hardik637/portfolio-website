@@ -14,6 +14,9 @@ export const projectsData = [
     isConcept: false,
     statusLabel: 'Repository Available',
     themeAccent: 'gold',
+    image: '/projects/dubai-luxury-desktop.webp',
+    mobileImage: '/projects/dubai-luxury-mobile.webp',
+    imageAlt: 'Dubai Luxury Real Estate website interface showcasing luxury property listings and architectural framing',
     accentDetails: {
       location: 'Dubai Concept',
       deliverable: 'Frontend Interface',
@@ -35,6 +38,9 @@ export const projectsData = [
     isConcept: false,
     statusLabel: 'Live Website',
     themeAccent: 'emerald',
+    image: '/projects/export-easy-hai-desktop.webp',
+    mobileImage: '/projects/export-easy-hai-mobile.webp',
+    imageAlt: 'Export Easy Hai live educational landing page with international trade course curriculum',
     accentDetails: {
       deployment: 'Vercel Edge',
       audience: 'Trade Learners',
@@ -56,6 +62,9 @@ export const projectsData = [
     isConcept: true,
     statusLabel: 'Concept Showcase',
     themeAccent: 'rose',
+    image: '/projects/kala-desktop.webp',
+    mobileImage: '/projects/kala-mobile.webp',
+    imageAlt: 'Kala: Cakes & Desserts patisserie e-commerce concept interface displaying dessert categories',
     accentDetails: {
       type: 'Concept Exploration',
       catalog: 'Cakes, Tubs, Brownies',
@@ -77,6 +86,9 @@ export const projectsData = [
     isConcept: false,
     statusLabel: 'Repository Available',
     themeAccent: 'slate',
+    image: '/projects/art-ecommerce-desktop.webp',
+    mobileImage: '/projects/art-ecommerce-mobile.webp',
+    imageAlt: 'Art E-Commerce online storefront showing curated art collections and sculptural catalog',
     accentDetails: {
       niche: 'Art Storefront',
       curation: 'Sculptures & Prints',
