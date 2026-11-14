@@ -12,17 +12,17 @@ export const SectionHeading = ({
   const isCentered = align === 'center';
 
   return (
-    <div className={`mb-12 md:mb-16 ${isCentered ? 'text-center mx-auto max-w-2xl' : 'max-w-3xl'} ${className}`}>
+    <div className={`mb-8 sm:mb-12 md:mb-16 ${isCentered ? 'text-center mx-auto max-w-2xl' : 'max-w-3xl'} ${className}`}>
       {eyebrow && (
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center gap-2 mb-3.5"
+          className="inline-flex items-center gap-2 mb-2 sm:mb-3.5"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-          <span className="font-mono text-xs uppercase tracking-widest text-text-secondary font-medium">
+          <span className="font-mono text-[11px] sm:text-xs uppercase tracking-widest text-text-secondary font-medium">
             {eyebrow}
           </span>
         </motion.div>
@@ -33,7 +33,7 @@ export const SectionHeading = ({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-        className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-text-primary leading-[1.15]"
+        className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-text-primary leading-[1.15] text-balance"
       >
         {title}
       </motion.h2>
@@ -44,7 +44,7 @@ export const SectionHeading = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-4 text-base sm:text-lg text-text-secondary leading-relaxed font-sans"
+          className="mt-2.5 sm:mt-4 text-sm sm:text-lg text-text-secondary leading-relaxed font-sans"
         >
           {subtitle}
         </motion.p>

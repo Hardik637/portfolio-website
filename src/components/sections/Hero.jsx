@@ -6,7 +6,7 @@ import { Button } from '../common/Button';
 
 export const Hero = () => {
   return (
-    <section className="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+    <section className="relative pt-6 pb-12 sm:pt-16 sm:pb-20 md:pt-20 md:pb-32 overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Main Typographic Column (Cols 1-8) */}
@@ -16,14 +16,14 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-surface text-xs font-mono text-text-secondary mb-6"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border/80 bg-surface text-xs font-mono text-text-secondary mb-4 sm:mb-6"
             >
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="tracking-widest uppercase font-semibold text-text-primary">
-                Hardik Agarwal
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse shrink-0" />
+              <span className="tracking-wider uppercase font-semibold text-text-primary text-[11px] sm:text-xs">
+                Available for Projects
               </span>
-              <span className="text-border">|</span>
-              <span>Web Developer & Digital Experience Builder</span>
+              <span className="text-border/60">/</span>
+              <span className="text-text-secondary text-[11px] sm:text-xs">Jaipur, India</span>
             </motion.div>
 
             {/* Approved Headline */}
@@ -31,7 +31,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-bold text-text-primary tracking-tight leading-[1.08] max-w-3xl"
+              className="font-heading text-[2.15rem] xs:text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4.25rem] font-bold text-text-primary tracking-tight leading-[1.1] sm:leading-[1.08] max-w-3xl"
             >
               Building digital experiences that move businesses{' '}
               <span className="font-editorial italic font-normal text-accent inline-block">
@@ -44,7 +44,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-6 text-base sm:text-lg md:text-xl text-text-secondary leading-relaxed max-w-2xl font-sans"
+              className="mt-3.5 sm:mt-6 text-sm sm:text-lg md:text-xl text-text-secondary leading-relaxed max-w-2xl font-sans"
             >
               I design and develop modern websites, e-commerce experiences and custom web solutions that combine thoughtful design with reliable functionality.
             </motion.p>
@@ -54,14 +54,14 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-8 sm:mt-10 flex flex-wrap items-center gap-4 w-full sm:w-auto"
+              className="mt-6 sm:mt-10 flex items-center gap-3 w-full sm:w-auto"
             >
               <Button
                 href="#work"
                 variant="primary"
-                size="lg"
+                size="md"
                 icon={ArrowDown}
-                className="w-full sm:w-auto"
+                className="flex-1 sm:flex-initial text-xs sm:text-base py-3 sm:py-3.5 px-5 sm:px-7 rounded-xl font-semibold shadow-sm justify-center"
               >
                 View My Work
               </Button>
@@ -69,41 +69,41 @@ export const Hero = () => {
               <Button
                 href="#contact"
                 variant="secondary"
-                size="lg"
+                size="md"
                 icon={ArrowRight}
-                className="w-full sm:w-auto"
+                className="flex-1 sm:flex-initial text-xs sm:text-base py-3 sm:py-3.5 px-4 sm:px-7 rounded-xl font-medium justify-center"
               >
                 Let's Talk
               </Button>
             </motion.div>
 
-            {/* Micro Metrics Banner */}
+            {/* Hero Metadata - Clean Editorial Specs */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.45 }}
-              className="mt-12 pt-8 border-t border-border/80 w-full grid grid-cols-2 sm:grid-cols-3 gap-6 text-xs font-mono"
+              className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-border/60 w-full grid grid-cols-2 sm:grid-cols-3 gap-y-3 gap-x-5 text-xs font-mono"
             >
               <div>
-                <span className="text-text-secondary block mb-1">Education</span>
-                <span className="text-text-primary font-medium block">BCA @ Manipal Univ Jaipur</span>
+                <span className="text-text-secondary/70 text-[10px] uppercase tracking-wider block mb-1">Education</span>
+                <span className="text-text-primary font-medium text-xs sm:text-sm block">BCA @ Manipal Univ</span>
               </div>
               <div>
-                <span className="text-text-secondary block mb-1">Core Capability</span>
-                <span className="text-text-primary font-medium block">React & Modern Web</span>
+                <span className="text-text-secondary/70 text-[10px] uppercase tracking-wider block mb-1">Core Tech</span>
+                <span className="text-text-primary font-medium text-xs sm:text-sm block">React &amp; Modern Web</span>
               </div>
               <div className="col-span-2 sm:col-span-1">
-                <span className="text-text-secondary block mb-1">Client Availability</span>
-                <span className="text-accent font-medium flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                  Open for Freelance
+                <span className="text-text-secondary/70 text-[10px] uppercase tracking-wider block mb-1">Client Availability</span>
+                <span className="text-accent font-medium text-xs sm:text-sm flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                  Open for Freelance Projects
                 </span>
               </div>
             </motion.div>
           </div>
 
-          {/* Asymmetric Interactive Creative Node (Cols 9-12) */}
-          <div className="lg:col-span-4 flex justify-center lg:justify-end">
+          {/* Asymmetric Interactive Creative Node (Cols 9-12) - Desktop Only */}
+          <div className="hidden lg:flex lg:col-span-4 justify-end">
             <motion.div
               initial={{ opacity: 0, scale: 0.94 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -165,7 +165,7 @@ export const Hero = () => {
                     <Compass className="w-3.5 h-3.5 text-accent" />
                     Specialization
                   </span>
-                  <span className="text-text-primary font-medium">Bespoke & E-Commerce</span>
+                  <span className="text-text-primary font-medium">Bespoke &amp; E-Commerce</span>
                 </div>
 
                 <div className="flex items-center justify-between p-2.5 rounded-lg bg-bg-secondary/70 border border-border/60">

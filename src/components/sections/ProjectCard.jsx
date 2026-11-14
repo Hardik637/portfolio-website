@@ -24,10 +24,95 @@ export const ProjectCard = ({ project, index }) => {
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       className="group relative rounded-2xl border border-border bg-surface overflow-hidden hover:border-text-secondary/50 transition-all duration-500 shadow-sm"
     >
-      <div className={`grid grid-cols-1 lg:grid-cols-12 gap-0 ${isEven ? '' : 'lg:flex-row-reverse'}`}>
-        {/* Genuine Browser Frame Viewport (Cols 1-7 or 1-6) */}
+      {/* ─────────────────────────────────────────────────────────────
+          1. DEDICATED MOBILE SHOWCASE CARD (Visible on < lg screens)
+         ───────────────────────────────────────────────────────────── */}
+      <div className="lg:hidden p-5 sm:p-7 flex flex-col gap-4">
+        {/* Top Eyebrow & Live Badge */}
+        <div className="flex items-center justify-between gap-2">
+          <span className="font-mono text-[11px] text-text-secondary uppercase tracking-widest font-semibold">
+            {project.eyebrow}
+          </span>
+          <Badge variant="live" dot={true}>
+            Live Website
+          </Badge>
+        </div>
+
+        {/* Title & Tagline */}
+        <div>
+          <h3 className="font-heading text-xl sm:text-2xl font-bold text-text-primary tracking-tight">
+            {project.title}
+          </h3>
+          <p className="text-xs font-mono text-accent mt-0.5">
+            {project.domain}
+          </p>
+        </div>
+
+        {/* Smartphone Showcase Frame */}
+        <div className="py-4 px-2 rounded-2xl bg-bg-secondary/40 border border-border/60 flex justify-center items-center">
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative block w-[200px] xs:w-[220px] aspect-[390/844] rounded-[24px] border-[5px] border-border bg-surface shadow-2xl overflow-hidden group/phone transition-transform duration-300 hover:scale-[1.02]"
+            aria-label={`Open ${project.title} live website`}
+          >
+            {/* Dynamic Island / Speaker notch */}
+            <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-14 h-3 bg-border/80 rounded-full z-10" />
+
+            {/* Live Website Mobile Screenshot */}
+            <img
+              src={project.mobileImage}
+              alt={project.imageAlt || `${project.title} interface preview`}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover object-top"
+            />
+
+            {/* Floating Domain Pill */}
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-obsidian/85 text-text-primary border border-border/80 text-[10px] font-mono flex items-center gap-1.5 backdrop-blur-sm whitespace-nowrap shadow-md">
+              <Globe className="w-2.5 h-2.5 text-emerald-400" />
+              <span>{getDisplayLocation()}</span>
+              <ArrowUpRight className="w-2.5 h-2.5 text-accent" />
+            </div>
+          </a>
+        </div>
+
+        {/* Description */}
+        <p className="text-sm text-text-secondary leading-relaxed font-sans">
+          {project.description}
+        </p>
+
+        {/* Technology Tags */}
+        <div className="flex flex-wrap gap-1.5">
+          {project.tags.map(tag => (
+            <Badge key={tag} variant="tech">
+              {tag}
+            </Badge>
+          ))}
+        </div>
+
+        {/* Bottom CTA Button */}
+        <div className="pt-3 border-t border-border mt-1">
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-accent text-obsidian text-xs font-semibold hover:brightness-105 active:scale-[0.98] transition-all shadow-sm"
+          >
+            <span>Visit Live Website</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
+          </a>
+        </div>
+      </div>
+
+      {/* ─────────────────────────────────────────────────────────────
+          2. DEDICATED DESKTOP ASYMMETRIC GRID (Visible on lg: screens)
+         ───────────────────────────────────────────────────────────── */}
+      <div className={`hidden lg:grid lg:grid-cols-12 gap-0 ${isEven ? '' : 'lg:flex-row-reverse'}`}>
+        {/* Genuine Desktop Browser Frame (Cols 1-7 or 1-6) */}
         <div
-          className={`lg:col-span-7 flex flex-col border-b lg:border-b-0 bg-bg-secondary/40 ${
+          className={`lg:col-span-7 flex flex-col bg-bg-secondary/40 ${
             isEven ? 'lg:border-r border-border' : 'lg:order-2 lg:border-l border-border'
           }`}
         >
@@ -60,45 +145,34 @@ export const ProjectCard = ({ project, index }) => {
             </span>
           </div>
 
-          {/* Screenshot Container with Adaptive Aspect Ratio */}
+          {/* Desktop 16:10 Screenshot Viewport */}
           <a
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative block w-full aspect-[390/844] sm:aspect-[16/10] overflow-hidden bg-bg-primary cursor-pointer group/img"
+            className="relative block w-full aspect-[16/10] overflow-hidden bg-bg-primary cursor-pointer group/img"
             aria-label={`Open ${project.title} live website`}
           >
-            {/* Skeleton placeholder during initial decode */}
             {!imageLoaded && (
               <div className="absolute inset-0 bg-bg-secondary animate-pulse" />
             )}
 
-            <picture>
-              {project.mobileImage && (
-                <source
-                  media="(max-width: 639px)"
-                  srcSet={project.mobileImage}
-                  type="image/webp"
-                />
-              )}
-              <source srcSet={project.image} type="image/webp" />
-              <img
-                src={project.image}
-                alt={project.imageAlt || `${project.title} interface preview`}
-                loading="lazy"
-                decoding="async"
-                onLoad={() => setImageLoaded(true)}
-                onError={() => setImageLoaded(true)}
-                className={`w-full h-full object-cover object-top transition-transform duration-700 ease-luxury group-hover/img:scale-[1.02] ${
-                  imageLoaded ? 'opacity-100' : 'opacity-0'
-                }`}
-              />
-            </picture>
+            <img
+              src={project.image}
+              alt={project.imageAlt || `${project.title} interface preview`}
+              loading="lazy"
+              decoding="async"
+              onLoad={() => setImageLoaded(true)}
+              onError={() => setImageLoaded(true)}
+              className={`w-full h-full object-cover object-top transition-transform duration-700 ease-luxury group-hover/img:scale-[1.02] ${
+                imageLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
           </a>
         </div>
 
-        {/* Content Column (Cols 8-12) */}
-        <div className={`lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-between ${isEven ? '' : 'lg:order-1'}`}>
+        {/* Desktop Content Column (Cols 8-12) */}
+        <div className={`lg:col-span-5 p-8 lg:p-10 flex flex-col justify-between ${isEven ? '' : 'lg:order-1'}`}>
           <div>
             {/* Top Eyebrow & Status Badge */}
             <div className="flex items-center justify-between gap-2 mb-4">
@@ -112,7 +186,7 @@ export const ProjectCard = ({ project, index }) => {
             </div>
 
             {/* Title */}
-            <h3 className="font-heading text-2xl sm:text-3xl font-bold text-text-primary tracking-tight group-hover:text-accent transition-colors">
+            <h3 className="font-heading text-2xl lg:text-3xl font-bold text-text-primary tracking-tight group-hover:text-accent transition-colors">
               {project.title}
             </h3>
 
